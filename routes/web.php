@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Frontend\frontendController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -18,12 +18,22 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//route de la page home
+Route::get('/',[FrontendController::class,'index']);
+
+//la page category
+Route::get('/category',[FrontendController::class,'categoryfct']);
+
+//la page de chaque categorie:
+Route::get('/view-category/{slug}',[FrontendController::class,'viewcategory']);
+
 
 Auth::routes();
-
+// route pour l'utilisateur normal 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// route pour l'admin
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
