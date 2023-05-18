@@ -1,5 +1,5 @@
 <!-- la page category -->
-@extends('layouts.frontend')
+@extends('layouts.App')
 
 @section('title')
    category
@@ -14,12 +14,12 @@
           <div class="row">
             @foreach($category as $cat)
             <div class="col-md-3 mb-3">
-               <a href="{{url('view-category'.$cate->slug)}}">
+               <a href="{{url('view-category'.$cat->slug)}}">
                     <div class="card">
                       
                       <img src="{{asset('assets/uploads/category/'.$cat->image)}}" alt="category image">
                     <div class="card-body">
-                     <h5>{{$cate->name}}</h5>
+                     <h5>{{$cat->name}}</h5>
                      <p>
                       {{ $cat->description}}
                      </p>

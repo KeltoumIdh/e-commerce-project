@@ -1,6 +1,6 @@
 <!-- la pages des produits apres le clique sur une categorie -->
 
-@extends('layouts.frontend')
+@extends('layouts.App')
 
 @section('title')
     {{ $category->name}}

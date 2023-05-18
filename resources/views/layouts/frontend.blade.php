@@ -21,7 +21,7 @@
     <link href="{{asset('frontend/css/owl.carousel.min.css')}}" rel="stylesheet">
     <link href="{{asset('frontend/css/owl.theme.default.min.css')}}" rel="stylesheet">
 
-
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
    <!-- le css du lien des categories -->
     <style>
        a{
@@ -32,10 +32,8 @@
    
 </head>
 <body>
-  @include('layouts.frontNavBar')
-  <div class="content">
-    @yield('content')
-  </div>
+  @include('layouts.App')
+  
     <!-- Scripts -->
     <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('frontend/js/jquery-3.7.0.min.js')}}"></script>
@@ -43,7 +41,7 @@
     
 
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+   
    
     
 </body>

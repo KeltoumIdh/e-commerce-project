@@ -1,6 +1,5 @@
-<!-- La page d'acceuil -->
-
-@extends('layouts.frontend')
+  
+@extends('layouts.App')
 
 @section('title')
    welcome to KS-BIKE
@@ -46,6 +45,32 @@
                      <h5>{{$tcat->name}}</h5>
                      <p>
                       {{ $tcat->description}}
+                     </p>
+                  </div>
+                  </div>
+                 </a>
+                </div>
+               @endforeach
+         </div> 
+         </div>
+      </div>
+    </div>
+
+
+    <div class="py-5">
+      <div class="container">
+         <div class="row">
+           <center> <h2>Tout les produits</h2></center>
+         <div class="owl-carousel featured-carousel owl-theme">
+                @foreach($product as $pro)
+                  <div class="item">
+                    
+                    <div class="card">
+                      <img src="{{asset('assets/uploads/product/'.$pro->image)}}" alt="tcategory image">
+                    <div class="card-body">
+                     <h5>{{$pro->name}}</h5>
+                     <p>
+                      {{ $pro->description}}
                      </p>
                   </div>
                   </div>
