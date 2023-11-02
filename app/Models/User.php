@@ -17,8 +17,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'is_admin'
+        'name', 'email', 'password', 'is_admin','phone','adress1','city','country','lname'
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class,'id_user');
+    }
   
     /**
      * The attributes that should be hidden for arrays.
